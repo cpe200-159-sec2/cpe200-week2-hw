@@ -13,6 +13,8 @@ public class LinkedListTest {
         l.pushToHead('#');
         l.pushToHead('3');
 
+
+
         System.out.println("List Empty?: "+ l.isEmpty());
         System.out.println("List Size: "+l.getSize());
         System.out.print(" "); l.printForward();
