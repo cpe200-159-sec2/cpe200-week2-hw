@@ -12,12 +12,8 @@ public class LinkedListTest {
         l.pushToHead('E');
         l.pushToHead('#');
         l.pushToHead('3');
-/*
-        l.pushToTail('1');
-        l.pushToTail('2');
-        l.pushToTail('3');
-        l.pushToTail('4');
-        l.pushToTail('5');*/
+
+
 
         System.out.println("List Empty?: "+ l.isEmpty());
         System.out.println("List Size: "+l.getSize());
