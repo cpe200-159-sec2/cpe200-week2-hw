@@ -43,11 +43,35 @@ public class PList {
 
     public char popTail() {
         // implement your code here
-        
+        char i=tail.data;
+
+
+        if (head==tail)
+            tail = head = null;
+        else {
+
+            tail.prev.next = null;
+            tail = tail.prev;
+            
+        }
+        size--;
+
+
+        return i;
+
+
     }
 
     public boolean search(char i) {
         // implement your code here
+        PNode tmp = head;
+        while(true){
+            if(tmp.data == i) return true;
+
+            if(tmp.next == null) return false;
+            tmp = tmp.next;
+        }
+
     }
 
     public boolean isEmpty() { return (head == null); }
@@ -70,6 +94,7 @@ public class PList {
             System.out.print(tmp.data);
             tmp = tmp.prev;
         }
+        System.out.println();
     }
 
     public int getSize() {
