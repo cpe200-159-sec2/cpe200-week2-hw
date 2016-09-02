@@ -2,59 +2,97 @@ package cpe200.week2;
 
 public class PList {
 
-    public PList() { head = tail = null; }
+    public PList() {
+        head = tail = null;
+    }
 
     public void pushToHead(char i) {
         head = new PNode(i, head, null);
-        if (tail==null)
+        if (null == tail) {
             tail = head;
-        else
+        } else {
             head.next.prev = head;
-        size++;
+        }
+        size += 1;
     }
 
     public void pushToTail(char i) {
-        // implement your code here
+        tail = new PNode(i, null, tail);
+        if (null == head) {
+            head = tail;
+        } else {
+            tail.prev.next = tail;
+        }
+        size += 1;
     }
 
     public char popHead() {
-        char i=head.data;
+        char i = head.data;
         PNode tmp = head;
 
-        if (head==tail)
+        if (tail == head) {
             head = tail = null;
-        else {
+        } else {
             head = head.next;
             head.prev = null;
             tmp.next = null;
         }
 
-        size--;
+        size -= 1;
 
         return i;
     }
 
     public char popTail() {
-        // implement your code here
+        char i = tail.data;
+        PNode tmp = tail;
+
+        if (head == tail) {
+            tail = head = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            tmp.prev = null;
+        }
+
+        size -= 1;
+
+        return i;
     }
 
     public boolean search(char i) {
-        // implement your code here
+        PNode node = head;
+        while(null != node) {
+            if (i == node.data) {
+                return true;
+            }
+            node = node.next;
+        }
+        return false;
     }
 
-    public boolean isEmpty() { return (head == null); }
+    public boolean isEmpty() {
+        return (null == head);
+    }
 
     public void printForward() {
         PNode tmp = head;
 
-        while (tmp != null) {
-            // implement your code here
+        while (null != tmp) {
+            System.out.print(tmp.data);
+            tmp = tmp.next;
         }
         System.out.println();
     }
 
     public void printBackward() {
-        // implement your code here
+        PNode tmp = tail;
+
+        while (null != tmp) {
+            System.out.print(tmp.data);
+            tmp = tmp.prev;
+        }
+        System.out.println();
     }
 
     public int getSize() {
@@ -62,5 +100,5 @@ public class PList {
     }
 
     private PNode head, tail;
-    private int size=0;
+    private int size = 0;
 }
