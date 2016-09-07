@@ -19,7 +19,7 @@ public class LinkedListTest {
         System.out.print(" "); l.printBackward();
 
         System.out.println("Found 'I' in list?: "+ l.search('I'));
-        System.out.println("Pop head: "+l.popHead());
+        System.out.println("Pop head: "+ l.popHead());
 
         System.out.print(" "); l.printBackward();
 
