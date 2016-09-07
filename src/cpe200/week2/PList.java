@@ -15,7 +15,10 @@ public class PList {
 
     public void pushToTail(char i) {
         // implement your code here
-        
+        tail = new PNode(i,null ,tail);
+        if (head == null) head =tail;
+        else head.next = tail;
+        size++;
 
     }
 

@@ -6,12 +6,18 @@ public class LinkedListTest {
 	    PList l = new PList();
 
         System.out.println("List Empty?: "+ l.isEmpty());
-        l.pushToHead('I');
+      /*  l.pushToHead('I');
         l.pushToHead('S');
         l.pushToHead('N');
         l.pushToHead('E');
         l.pushToHead('#');
-        l.pushToHead('3');
+        l.pushToHead('3');*/
+        l.pushToTail('I');
+        l.pushToTail('S');
+        l.pushToTail('N');
+        l.pushToTail('E');
+        l.pushToTail('#');
+        l.pushToTail('3');
 
         System.out.println("List Empty?: "+ l.isEmpty());
         System.out.println("List Size: "+l.getSize());
@@ -30,5 +36,6 @@ public class LinkedListTest {
 
         System.out.println("Found '3' in list?: "+ l.search('3'));
         System.out.println("List Size: "+l.getSize());
+
     }
 }
