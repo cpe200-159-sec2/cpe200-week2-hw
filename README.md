@@ -20,11 +20,11 @@ List Size: 6
  3#ENSI
  ISNE#3
 Found 'I' in list?: true
-Pop head: 3
+Pop head: 3Found '3' in list?: false
  ISNE#
 Pop tail: I
  #ENS
  SNE#
-Found '3' in list?: false
+
 List Size: 4
 ```
