@@ -40,13 +40,11 @@ public class PList {
 
     public char popTail() {
         char i=tail.data;
-        PNode temp = tail;
         if(tail==head)
             tail=head=null;
         else{
             tail=tail.prev;
             tail.next=null;
-            temp.prev=null;
         }
         size--;
         return i;
