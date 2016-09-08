@@ -14,7 +14,15 @@ public class PList {
     }
 
     public void pushToTail(char i) {
-        // implement your code here
+        if(head == null){
+                       head = new PNode(i, null, tail);
+                       head = tail;
+                   }
+        else{
+                      tail = new PNode(i, null, tail);
+                       tail.prev.next = tail;
+                   }
+               size++;
     }
 
     public char popHead() {
@@ -35,11 +43,17 @@ public class PList {
     }
 
     public char popTail() {
-        // implement your code here
+
     }
 
     public boolean search(char i) {
-        // implement your code here
+        PNode tmp = head;
+               while (tmp.next != null) {
+                       tmp = tmp.next;
+              char i = tmp.data;
+                tmp.prev.next = null;
+               size--;
+               return i;
     }
 
     public boolean isEmpty() { return (head == null); }
@@ -48,13 +62,20 @@ public class PList {
         PNode tmp = head;
 
         while (tmp != null) {
-            // implement your code here
+            System.out.print(tmp.data);
+                      tmp = tmp.next;
         }
         System.out.println();
     }
 
     public void printBackward() {
-        // implement your code here
+        PNode tmp = tail;
+
+                       while (tmp != null){
+                      System.out.print(tmp.data);
+                       tmp = tmp.prev;
+                   }
+               System.out.println();
     }
 
     public int getSize() {
