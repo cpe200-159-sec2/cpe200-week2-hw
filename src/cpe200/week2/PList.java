@@ -1,8 +1,9 @@
 package cpe200.week2;
 
 public class PList {
-
-    public PList() { head = tail = null; }
+    public PList(){
+        head = tail = null;
+    }
 
     public void pushToHead(char i) {
         head = new PNode(i, head, null);
@@ -13,7 +14,7 @@ public class PList {
         size++;
     }
 
-    public void pushToTail(char i) {
+    public void pushToTail(char i){
         tail = new PNode(i,null,tail);
         if(head==null) {
             head = tail;
@@ -24,10 +25,9 @@ public class PList {
         }
     }
 
-    public char popHead() {
+    public char popHead(){
         char i=head.data;
         PNode tmp = head;
-
         if (head==tail)
             head = tail = null;
         else {
@@ -35,13 +35,11 @@ public class PList {
             head.prev = null;
             tmp.next = null;
         }
-
         size--;
-
         return i;
     }
 
-    public char popTail() {
+    public char popTail(){
         PNode temp = tail;
         char i = tail.data;
         if (head == tail){
@@ -56,7 +54,7 @@ public class PList {
         return i;
     }
 
-    public boolean search(char i) {
+    public boolean search(char i){
         PNode temp = head;
         while(temp.data != i && temp.next != null){
             temp = temp.next;
@@ -67,11 +65,12 @@ public class PList {
         else return false;
     }
 
-    public boolean isEmpty() { return (head == null); }
+    public boolean isEmpty(){
+        return (head == null);
+    }
 
     public void printForward() {
         PNode tmp = head;
-
         while (tmp != null){
             System.out.print(tmp.data);
             tmp = tmp.next;
@@ -91,7 +90,6 @@ public class PList {
     public int getSize() {
         return size;
     }
-
     private PNode head, tail;
     private int size=0;
 }
