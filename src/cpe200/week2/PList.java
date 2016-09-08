@@ -1,5 +1,7 @@
 package cpe200.week2;
 
+import java.util.WeakHashMap;
+
 public class PList {
 
     public PList() { head = tail = null; }
@@ -14,7 +16,12 @@ public class PList {
     }
 
     public void pushToTail(char i) {
-        // implement your code here
+        tail = new PNode(i,tail,null);
+        if (head==null) {
+            head = tail;
+        }
+        else tail.next.prev = tail;
+        size++;
     }
 
     public char popHead() {
@@ -35,11 +42,30 @@ public class PList {
     }
 
     public char popTail() {
-        // implement your code here
+        char i=tail.data;
+        PNode tmp = tail;
+        if (tail==head){
+            head = tail = null;
+        }
+        else {
+            tail = tail.next;
+            tail.prev = null;
+            tmp.next = null;
+        }
+
+        size--;
+
+        return i;
     }
 
     public boolean search(char i) {
-        // implement your code here
+        PNode tmp = head;
+
+        for (int j = 0 ; j < size; j++) {
+            if (i==tmp.data) return true;
+            tmp = tmp.next;
+        }
+        return false;
     }
 
     public boolean isEmpty() { return (head == null); }
@@ -48,13 +74,19 @@ public class PList {
         PNode tmp = head;
 
         while (tmp != null) {
-            // implement your code here
+            System.out.print(tmp.data);
+            tmp = tmp.next;
         }
         System.out.println();
     }
 
     public void printBackward() {
-        // implement your code here
+        PNode tmp = tail;
+        while (tmp != null) {
+            System.out.print(tmp.data);
+            tmp = tmp.prev;
+        }
+        System.out.println();
     }
 
     public int getSize() {
