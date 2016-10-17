@@ -1,4 +1,5 @@
-# Week 2 - Homework , Doubly Linked List (revisited)
+
+.# Week 2 - Homework , Doubly Linked List (revisited)
 
 This homework will help you to learn basic idea about Class and Method in Java Programming.
 We will use the "doubly linked listed" as a problem for you in this homework.
